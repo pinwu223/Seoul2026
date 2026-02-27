@@ -1,0 +1,626 @@
+{\rtf1\ansi\ansicpg950\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="zh-Hant">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">\
+    <meta name="apple-mobile-web-app-capable" content="yes">\
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">\
+    <meta name="mobile-web-app-capable" content="yes">\
+    <meta name="theme-color" content="#ff85a1">\
+    <title>\uc0\u55356 \u56816 \u55356 \u56823  2026 \u39318 \u29246 \u22899 \u22296 \u23560 \u23660 App</title>\
+    \
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">\
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">\
+    <script src="https://cdn.tailwindcss.com"></script>\
+    <script>\
+        tailwind.config = \{\
+            theme: \{\
+                extend: \{\
+                    fontFamily: \{ sans: ['"Noto Sans TC"', 'sans-serif'], en: ['"Quicksand"', 'sans-serif'] \},\
+                    colors: \{ brand: \{ pink: '#ff85a1', light: '#fff0f3', peach: '#ffc3a0', dark: '#4a4a4a', neon: '#ff2a6d' \} \}\
+                \}\
+            \}\
+        \}\
+    </script>\
+    <style>\
+        * \{ -webkit-tap-highlight-color: transparent; box-sizing: border-box; \}\
+        body \{ background-color: #fcfcfc; overscroll-behavior-y: none; user-select: none; -webkit-user-select: none; touch-action: pan-x pan-y; \}\
+        input, textarea, select \{ user-select: auto; -webkit-user-select: auto; \}\
+        .scrollbar-hide::-webkit-scrollbar \{ display: none; \}\
+        .scrollbar-hide \{ -ms-overflow-style: none; scrollbar-width: none; \}\
+        .page-view \{ display: none; animation: fadeScaleIn 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); \}\
+        .page-view.active \{ display: block; \}\
+        @keyframes fadeScaleIn \{ from \{ opacity: 0; transform: scale(0.98) translateY(10px); \} to \{ opacity: 1; transform: scale(1) translateY(0); \} \}\
+        .timeline-line::before \{ content: ''; position: absolute; left: 2rem; top: 24px; bottom: -8px; width: 2px; background: linear-gradient(to bottom, #ffafbd 0%, #ffc3a0 100%); z-index: 0; opacity: 0.5; \}\
+        .time-slot:last-child .timeline-line::before \{ display: none; \}\
+        .star-sparkle \{ display: inline-block; animation: rotateStar 4s linear infinite; \}\
+        @keyframes rotateStar \{ 0% \{ transform: rotate(0deg) scale(1); \} 50% \{ transform: rotate(180deg) scale(1.2); \} 100% \{ transform: rotate(360deg) scale(1); \} \}\
+        .dragging \{ opacity: 0.5; transform: scale(0.98); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); z-index: 50; \}\
+        .drag-over \{ border: 2px dashed #ff85a1 !important; background-color: #fff0f3 !important; padding-top: 2rem !important; transition: all 0.2s ease; \}\
+        .modal-overlay \{ transition: opacity 0.3s ease; \}\
+        .modal-overlay.hidden \{ opacity: 0; pointer-events: none; \}\
+        @keyframes slideUpSheet \{ from \{ transform: translateY(100%); \} to \{ transform: translateY(0); \} \}\
+        .modal-overlay:not(.hidden) > div:last-child \{ animation: slideUpSheet 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; \}\
+        .checklist-item input:checked + div span.task-text \{ text-decoration: line-through; color: #9ca3af; \}\
+        .safe-pb \{ padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem); \}\
+        .safe-pt \{ padding-top: calc(env(safe-area-inset-top) + 2rem); \}\
+        .fab-safe-bottom \{ bottom: calc(env(safe-area-inset-bottom) + 5rem); \}\
+    </style>\
+</head>\
+<body class="text-brand-dark font-sans h-[100dvh] w-full flex flex-col overflow-hidden">\
+\
+    <div id="main-scroll-container" class="flex-1 overflow-y-auto overflow-x-hidden relative w-full scrollbar-hide pb-20">\
+        \
+        <header class="bg-gradient-to-br from-[#ffafbd] via-[#ff85a1] to-[#ffc3a0] text-white safe-pt pb-10 px-6 rounded-b-[2.5rem] shadow-lg relative overflow-hidden shrink-0">\
+            <div class="absolute top-[-20px] left-[-20px] opacity-20 text-8xl"><i class="fas fa-compact-disc animate-[spin_10s_linear_infinite]"></i></div>\
+            <div class="absolute bottom-[-10px] right-[-10px] opacity-20 text-7xl"><i class="fas fa-star"></i></div>\
+            <div class="relative z-10 text-center">\
+                <h1 class="text-3xl font-black tracking-widest mb-1 drop-shadow-md font-en">SEOUL 2026</h1>\
+                <p class="text-white/95 font-medium text-xs flex items-center justify-center gap-2">\
+                    <i class="fas fa-sparkles text-yellow-200 star-sparkle"></i> \uc0\u22899 \u22296 \u39318 \u29246 \u24033 \u28436 \u23560 \u23660  App\
+                </p>\
+            </div>\
+        </header>\
+\
+        <!-- 1. \uc0\u39318 \u38913  -->\
+        <div id="view-home" class="page-view active">\
+            <div class="max-w-md mx-auto px-4 -mt-6 relative z-20 space-y-4">\
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 active:scale-[0.99] transition-transform">\
+                    <h3 class="text-xs font-bold text-gray-800 mb-3 flex items-center gap-1.5"><i class="fas fa-exchange-alt text-brand-pink"></i> \uc0\u21295 \u29575 \u25563 \u31639  & \u36864 \u31237 \u35430 \u31639 </h3>\
+                    <div class="flex items-center gap-2 bg-gray-50 p-2 rounded-xl border border-gray-100 mb-2">\
+                        <span class="font-bold text-gray-500 text-sm pl-2">\uc0\u8361 </span>\
+                        <input type="number" id="krw-input" placeholder="\uc0\u36664 \u20837 \u38867 \u20803 \u37329 \u38989 " class="bg-transparent w-full outline-none font-bold text-gray-800 text-lg font-en" oninput="calculateExchange()">\
+                    </div>\
+                    <div class="flex justify-between items-center px-1">\
+                        <div class="text-sm font-bold text-gray-800">\uc0\u32004  <span id="twd-output" class="text-brand-pink text-xl font-black font-en">0</span> NTD</div>\
+                        <div id="tax-free-badge" class="text-[10px] px-2 py-1 rounded bg-gray-100 text-gray-400 font-bold transition-colors">\uc0\u26410 \u36948 \u36864 \u31237 \u38272 \u27323 </div>\
+                    </div>\
+                </div>\
+\
+                <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-md p-4 text-white relative overflow-hidden">\
+                    <i class="fas fa-plane absolute right-[-10px] bottom-[-10px] text-6xl text-white/5"></i>\
+                    <h3 class="text-xs font-bold text-brand-peach mb-3 tracking-widest flex items-center gap-1.5"><i class="fas fa-ticket-alt"></i> FLIGHT INFO</h3>\
+                    <div class="mb-3 bg-white/10 rounded-xl p-3 backdrop-blur-md border-l-2 border-brand-pink">\
+                        <div class="flex justify-between items-center mb-1.5"><span class="text-[10px] bg-brand-pink text-white px-2 py-0.5 rounded font-bold">\uc0\u21435 \u31243  3/1</span><span class="text-[11px] font-en font-bold text-gray-300">IT662 (\u34382 \u33322 )</span></div>\
+                        <div class="flex justify-between items-center"><div class="text-center"><div class="text-2xl font-black font-en">KHH</div><div class="text-[10px] text-gray-400 mt-0.5 font-en">16:00</div></div><div class="flex-1 flex flex-col items-center px-2"><div class="text-[10px] text-gray-400 mb-1 font-en">2h 25m</div><div class="w-full h-px bg-gray-500 relative"><i class="fas fa-plane text-brand-pink absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs"></i></div></div><div class="text-center"><div class="text-2xl font-black font-en">GMP</div><div class="text-[10px] text-gray-400 mt-0.5 font-en">19:25</div></div></div>\
+                    </div>\
+                    <div class="mb-3 bg-white/10 rounded-xl p-3 backdrop-blur-md border-l-2 border-red-400">\
+                        <div class="flex justify-between items-center mb-1.5"><span class="text-[10px] bg-red-500 text-white px-2 py-0.5 rounded font-bold">\uc0\u22238 \u31243  3/6 (\u20161 \u24029 )</span><span class="text-[11px] font-en font-bold text-gray-300">CI165 (\u33775 \u33322 )</span></div>\
+                        <div class="flex justify-between items-center"><div class="text-center"><div class="text-2xl font-black font-en">ICN</div><div class="text-[10px] text-gray-400 mt-0.5 font-en">12:00</div></div><div class="flex-1 flex flex-col items-center px-2"><div class="text-[10px] text-gray-400 mb-1 font-en">3h 05m</div><div class="w-full h-px bg-gray-500 relative"><i class="fas fa-plane text-red-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs rotate-180"></i></div></div><div class="text-center"><div class="text-2xl font-black font-en">KHH</div><div class="text-[10px] text-gray-400 mt-0.5 font-en">14:05</div></div></div>\
+                    </div>\
+                    <div class="bg-white/10 rounded-xl p-3 backdrop-blur-md border-l-2 border-blue-400">\
+                        <div class="flex justify-between items-center mb-1.5"><span class="text-[10px] bg-blue-500 text-white px-2 py-0.5 rounded font-bold">\uc0\u22238 \u31243  3/6 (\u37329 \u28006 )</span><span class="text-[11px] font-en font-bold text-gray-300">IT663 (\u34382 \u33322 )</span></div>\
+                        <div class="flex justify-between items-center"><div class="text-center"><div class="text-2xl font-black font-en">GMP</div><div class="text-[10px] text-gray-400 mt-0.5 font-en">20:35</div></div><div class="flex-1 flex flex-col items-center px-2"><div class="text-[10px] text-gray-400 mb-1 font-en">2h 40m</div><div class="w-full h-px bg-gray-500 relative"><i class="fas fa-plane text-blue-400 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs rotate-180"></i></div></div><div class="text-center"><div class="text-2xl font-black font-en">KHH</div><div class="text-[10px] text-gray-400 mt-0.5 font-en">22:15</div></div></div>\
+                    </div>\
+                </div>\
+\
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden relative mb-10">\
+                    <div class="absolute right-[-10px] top-[-10px] text-5xl text-brand-pink/5"><i class="fas fa-bed"></i></div>\
+                    <div class="p-4 relative z-10">\
+                        <h3 class="text-xs font-bold text-gray-800 mb-3 flex items-center gap-1.5"><i class="fas fa-hotel text-indigo-400"></i> \uc0\u20303 \u23487 \u23566 \u33322 </h3>\
+                        <div class="mb-3 pb-3 border-b border-gray-50 flex justify-between items-center gap-2">\
+                            <div>\
+                                <div class="flex items-center gap-2 mb-1"><span class="text-[10px] bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded font-bold border border-indigo-100">3/1</span><div class="font-bold text-gray-800 text-[14px]">Marie's house 101 hongdae</div></div>\
+                                <div class="text-[11px] text-gray-500"><i class="fas fa-map-marker-alt text-brand-peach w-3 text-center mr-1"></i> \uc0\u24344 \u22823  3 \u34399 \u20986 \u21475 </div>\
+                            </div>\
+                        </div>\
+                        <div class="mb-1 flex justify-between items-center gap-2">\
+                            <div>\
+                                <div class="flex items-center gap-2 mb-1"><span class="text-[10px] bg-indigo-50 text-indigo-600 px-1.5 py-0.5 rounded font-bold border border-indigo-100">3/2 - 3/6</span><div class="font-bold text-gray-800 text-[14px]">\uc0\u24344 \u22823 \u27665 \u23487  (202\u54840 )</div></div>\
+                                <div class="text-[11px] text-gray-500 mb-0.5"><i class="fas fa-map-marker-alt text-brand-peach w-3 text-center mr-1"></i> \uc0\u49436 \u50872 \u53945 \u48324 \u49884  \u47560 \u54252 \u44396  \u49436 \u44368 \u46041 327-19</div>\
+                                <div class="text-[11px] text-gray-500 ml-4">\uc0\u24344 \u22823  7 \u34399 \u20986 \u21475 </div>\
+                            </div>\
+                            <button onclick="openLink(event, 'https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%84%9C%EA%B5%90%EB%8F%99%20327-19')" class="w-10 h-10 shrink-0 rounded-full bg-green-50 text-green-600 flex items-center justify-center border border-green-100 active:bg-green-200 transition-colors shadow-sm"><i class="fas fa-map-marked-alt"></i></button>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+\
+        <!-- 2. \uc0\u34892 \u31243  -->\
+        <div id="view-itinerary" class="page-view relative min-h-[80vh]">\
+            <main class="max-w-md mx-auto px-4 -mt-6 relative z-20 mb-10">\
+                <div class="sticky top-0 z-40 bg-[#fcfcfc]/90 backdrop-blur-xl py-2 mb-4 -mx-4 px-4 shadow-[0_4px_15px_rgba(0,0,0,0.02)] border-b border-gray-100 flex gap-1.5 overflow-x-auto scrollbar-hide" id="day-tabs-container"></div>\
+                <div id="daily-weather" class="bg-sky-50 rounded-2xl p-3 mb-5 flex items-center justify-between border border-sky-100 shadow-sm transition-all active:scale-[0.99]">\
+                    <div class="flex items-center gap-3"><div id="weather-icon" class="text-3xl drop-shadow-sm">\uc0\u55356 \u57124 \u65039 </div><div><div class="text-xs text-sky-700 font-bold mb-0.5">\u30070 \u22320 \u22825 \u27683 \u38928 \u22577 </div><div class="text-[11px] text-sky-600">\u39636 \u24863 \u28331 \u24230 : <span id="weather-feel" class="font-bold">2\'b0C</span></div></div></div>\
+                    <div class="text-right"><div id="weather-temp" class="text-xl font-black font-en text-sky-800">3\'b0/12\'b0</div></div>\
+                </div>\
+                <div id="itinerary-list" class="bg-gray-50/50 rounded-3xl p-2 min-h-[400px]"></div>\
+            </main>\
+            <button onclick="openItineraryModal()" class="fixed fab-safe-bottom right-6 w-14 h-14 bg-brand-neon text-white rounded-full shadow-[0_4px_15px_rgba(255,42,109,0.4)] flex items-center justify-center text-2xl z-50 active:scale-90 transition-transform"><i class="fas fa-plus"></i></button>\
+        </div>\
+\
+        <!-- 3. \uc0\u35352 \u24115  -->\
+        <div id="view-accounting" class="page-view relative min-h-[80vh]">\
+            <div class="max-w-md mx-auto px-4 -mt-6 relative z-20 mb-10">\
+                <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-5 text-white shadow-md relative overflow-hidden mb-5">\
+                    <i class="fas fa-wallet absolute right-[-10px] bottom-[-10px] text-7xl text-white/10"></i>\
+                    <div class="text-[11px] font-bold tracking-widest mb-1 text-emerald-100">TOTAL SPENT (KRW)</div>\
+                    <div class="text-3xl font-black font-en mb-1" id="total-spent-krw">\uc0\u8361  0</div>\
+                    <div class="text-xs text-emerald-100 font-bold">\uc0\u32004  <span id="total-spent-twd">0</span> NTD</div>\
+                </div>\
+                <div class="flex justify-between items-center mb-4 px-1">\
+                    <h3 class="text-sm font-bold text-gray-800"><i class="fas fa-list-ul text-emerald-500 mr-1"></i> \uc0\u28040 \u36027 \u32000 \u37636 </h3>\
+                    <button onclick="openExpenseModal()" class="text-[11px] bg-emerald-50 text-emerald-600 px-3 py-1.5 rounded font-bold border border-emerald-100 shadow-sm active:bg-emerald-200 transition-colors"><i class="fas fa-plus mr-1"></i> \uc0\u26032 \u22686 </button>\
+                </div>\
+                <div id="expense-list" class="space-y-2.5 pb-16"></div>\
+            </div>\
+        </div>\
+\
+        <!-- 4. \uc0\u28165 \u21934  -->\
+        <div id="view-checklist" class="page-view">\
+            <div class="max-w-md mx-auto px-4 -mt-6 relative z-20 mb-10 pb-16" id="checklist-container"></div>\
+        </div>\
+\
+        <!-- 5. \uc0\u25171 \u21345  -->\
+        <div id="view-checkin" class="page-view">\
+            <div class="max-w-md mx-auto px-4 -mt-6 relative z-20 mb-10 pb-16" id="checkin-container"></div>\
+        </div>\
+\
+    </div> <!-- End scroll container -->\
+\
+    <!-- Navigation -->\
+    <nav class="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-2xl border-t border-gray-100 shadow-[0_-10px_30px_rgba(0,0,0,0.03)] z-50 safe-pb pt-2 px-2 shrink-0">\
+        <div class="max-w-md mx-auto flex justify-between">\
+            <button onclick="switchTab('home')" id="tab-home" class="nav-btn flex flex-col items-center gap-1 text-brand-pink font-bold w-[20%] transition-colors active:scale-95"><i class="fas fa-home text-xl mb-0.5"></i><span class="text-[10px] tracking-widest">\uc0\u39318 \u38913 </span></button>\
+            <button onclick="switchTab('itinerary')" id="tab-itinerary" class="nav-btn flex flex-col items-center gap-1 text-gray-400 font-medium w-[20%] transition-colors active:scale-95"><i class="fas fa-map-marked-alt text-xl mb-0.5"></i><span class="text-[10px] tracking-widest">\uc0\u34892 \u31243 </span></button>\
+            <button onclick="switchTab('accounting')" id="tab-accounting" class="nav-btn flex flex-col items-center gap-1 text-gray-400 font-medium w-[20%] transition-colors active:scale-95"><i class="fas fa-calculator text-xl mb-0.5"></i><span class="text-[10px] tracking-widest">\uc0\u35352 \u24115 </span></button>\
+            <button onclick="switchTab('checklist')" id="tab-checklist" class="nav-btn flex flex-col items-center gap-1 text-gray-400 font-medium w-[20%] transition-colors active:scale-95"><i class="fas fa-clipboard-check text-xl mb-0.5"></i><span class="text-[10px] tracking-widest">\uc0\u28165 \u21934 </span></button>\
+            <button onclick="switchTab('checkin')" id="tab-checkin" class="nav-btn flex flex-col items-center gap-1 text-gray-400 font-medium w-[20%] transition-colors active:scale-95"><i class="fas fa-map-pin text-xl mb-0.5"></i><span class="text-[10px] tracking-widest">\uc0\u25171 \u21345 </span></button>\
+        </div>\
+    </nav>\
+\
+    <!-- Modals -->\
+    <div id="itinerary-modal" class="modal-overlay hidden fixed inset-0 z-[100] flex items-end sm:items-center justify-center">\
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" onclick="closeItineraryModal()"></div>\
+        <div class="bg-white w-full max-w-md rounded-t-[2rem] sm:rounded-3xl p-6 pb-safe relative z-10 shadow-2xl max-h-[90vh] overflow-y-auto">\
+            <div class="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-5 sm:hidden"></div>\
+            <h2 id="modal-title" class="text-lg font-bold text-gray-800 mb-5 flex items-center gap-2"><i class="fas fa-edit text-brand-pink"></i> \uc0\u26032 \u22686 \u34892 \u31243 </h2>\
+            <form id="itinerary-form" onsubmit="saveItinerary(event)" class="space-y-4">\
+                <input type="hidden" id="item-id">\
+                <div class="grid grid-cols-2 gap-3">\
+                    <div><label class="block text-[11px] font-bold text-gray-500 mb-1">\uc0\u26178 \u38291 </label><input type="time" id="item-time" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-brand-pink text-sm font-en font-bold"></div>\
+                    <div><label class="block text-[11px] font-bold text-gray-500 mb-1">\uc0\u20998 \u39006 </label><select id="item-category" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-brand-pink text-sm font-bold"><option value="\u26223 \u40670 ">\u55357 \u56525  \u26223 \u40670 </option><option value="\u20303 \u23487 ">\u55356 \u57320  \u20303 \u23487 </option><option value="\u32654 \u39135 ">\u55356 \u57213 \u65039  \u32654 \u39135 </option><option value="\u36092 \u29289 ">\u55357 \u57037 \u65039  \u36092 \u29289 </option><option value="\u33322 \u29677 ">\u9992 \u65039  \u33322 \u29677 </option><option value="\u20132 \u36890 ">\u55357 \u56967  \u20132 \u36890 </option><option value="\u20854 \u20182 ">\u55357 \u56524  \u20854 \u20182 </option></select></div>\
+                </div>\
+                <div><label class="block text-[11px] font-bold text-gray-500 mb-1">\uc0\u34892 \u31243 \u21517 \u31281  <span class="text-red-400">*</span></label><input type="text" id="item-title" required placeholder="\u20363 \u22914 \u65306 \u26126 \u27934 \u25563 \u37666 \u25152 " class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-brand-pink text-sm font-bold"></div>\
+                <div><label class="block text-[11px] font-bold text-gray-500 mb-1">Naver Map \uc0\u23566 \u33322 \u36899 \u32080  (\u36984 \u22635 )</label><input type="url" id="item-map" placeholder="\u36028 \u19978  Naver Map \u32178 \u22336 " class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-brand-pink text-sm text-blue-500"></div>\
+                <div><label class="block text-[11px] font-bold text-gray-500 mb-1">\uc0\u29151 \u26989 \u26178 \u38291  / \u20633 \u35387 </label><textarea id="item-notes" rows="2" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-brand-pink text-sm"></textarea></div>\
+                <div class="flex gap-3 mt-6 pt-2">\
+                    <button type="button" id="btn-delete" onclick="deleteItineraryItem()" class="hidden px-5 py-3.5 bg-red-50 text-red-600 rounded-xl font-bold text-sm active:scale-95"><i class="fas fa-trash-alt"></i></button>\
+                    <button type="button" onclick="closeItineraryModal()" class="flex-1 py-3.5 bg-gray-100 text-gray-600 rounded-xl font-bold text-sm active:scale-95">\uc0\u21462 \u28040 </button>\
+                    <button type="submit" class="flex-1 py-3.5 bg-brand-pink text-white rounded-xl font-bold text-sm shadow-md active:scale-95">\uc0\u20786 \u23384 </button>\
+                </div>\
+            </form>\
+        </div>\
+    </div>\
+\
+    <div id="expense-modal" class="modal-overlay hidden fixed inset-0 z-[100] flex items-end sm:items-center justify-center">\
+        <div class="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" onclick="closeExpenseModal()"></div>\
+        <div class="bg-white w-full max-w-md rounded-t-[2rem] sm:rounded-3xl p-6 pb-safe relative z-10 shadow-2xl">\
+            <div class="w-12 h-1.5 bg-gray-200 rounded-full mx-auto mb-5 sm:hidden"></div>\
+            <h2 id="expense-modal-title" class="text-lg font-bold text-gray-800 mb-5 flex items-center gap-2"><i class="fas fa-receipt text-emerald-500"></i> \uc0\u26032 \u22686 \u28040 \u36027 </h2>\
+            <form id="expense-form" onsubmit="saveExpense(event)" class="space-y-4">\
+                <input type="hidden" id="exp-id">\
+                <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 flex items-center gap-2"><span class="font-bold text-gray-500 text-lg pl-2">\uc0\u8361 </span><input type="number" id="exp-amount" required placeholder="\u38867 \u20803 \u37329 \u38989 " class="bg-transparent w-full outline-none font-black text-gray-800 text-2xl font-en py-1"></div>\
+                <div class="grid grid-cols-2 gap-3">\
+                    <div><label class="block text-[11px] font-bold text-gray-500 mb-1">\uc0\u26085 \u26399  <span class="text-red-400">*</span></label><input type="date" id="exp-date" required class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-emerald-500 text-sm font-bold text-gray-700"></div>\
+                    <div><label class="block text-[11px] font-bold text-gray-500 mb-1">\uc0\u20998 \u39006 </label><select id="exp-category" class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-emerald-500 text-sm font-bold text-gray-700"><option value="\u32654 \u39135 ">\u55356 \u57213 \u65039  \u32654 \u39135 </option><option value="\u36092 \u29289 ">\u55357 \u57037 \u65039  \u36092 \u29289 </option><option value="\u20132 \u36890 ">\u55357 \u56967  \u20132 \u36890 </option><option value="\u20303 \u23487 ">\u55356 \u57320  \u20303 \u23487 </option><option value="\u20854 \u20182 ">\u55357 \u56524  \u20854 \u20182 </option></select></div>\
+                </div>\
+                <div><label class="block text-[11px] font-bold text-gray-500 mb-1">\uc0\u28040 \u36027 \u38917 \u30446  <span class="text-red-400">*</span></label><input type="text" id="exp-name" required placeholder="\u20363 \u22914 \u65306 Olive Young \u36092 \u29289 " class="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:border-emerald-500 text-sm font-bold text-gray-700"></div>\
+                <div class="flex gap-3 mt-6 pt-2">\
+                    <button type="button" id="exp-delete-btn" onclick="deleteExpense()" class="hidden px-5 py-3.5 bg-red-50 text-red-600 rounded-xl font-bold text-sm active:scale-95"><i class="fas fa-trash-alt"></i></button>\
+                    <button type="button" onclick="closeExpenseModal()" class="flex-1 py-3.5 bg-gray-100 text-gray-600 rounded-xl font-bold text-sm active:scale-95">\uc0\u21462 \u28040 </button>\
+                    <button type="submit" class="flex-1 py-3.5 bg-emerald-500 text-white rounded-xl font-bold text-sm shadow-md active:scale-95">\uc0\u20786 \u23384 </button>\
+                </div>\
+            </form>\
+        </div>\
+    </div>\
+\
+    <!-- Scripts -->\
+    <script>\
+        let currentDay = 1; const totalDays = 6; const exchangeRate = 0.0235;\
+        function openLink(e, url) \{ e.preventDefault(); e.stopPropagation(); window.open(url, '_blank'); \}\
+\
+        const weatherData = \{ 1: \{ date: '3/1', temp: '3\'b0/12\'b0', feel: '2\'b0C', icon: '\uc0\u55356 \u57124 \u65039 ' \}, 2: \{ date: '3/2', temp: '4\'b0/9\'b0', feel: '1\'b0C', icon: '\u55356 \u57128 \u65039 ' \}, 3: \{ date: '3/3', temp: '3\'b0/12\'b0', feel: '1\'b0C', icon: '\u55356 \u57128 \u65039 ' \}, 4: \{ date: '3/4', temp: '2\'b0/10\'b0', feel: '-1\'b0C', icon: '\u9925 ' \}, 5: \{ date: '3/5', temp: '0\'b0/6\'b0', feel: '-3\'b0C', icon: '\u10052 \u65039 ' \}, 6: \{ date: '3/6', temp: '-1\'b0/6\'b0', feel: '-4\'b0C', icon: '\u55356 \u57128 \u65039 ' \} \};\
+        const categoryStyles = \{ '\uc0\u26223 \u40670 ': \{ bg: 'bg-green-50', text: 'text-green-600', border: 'border-green-100', icon: 'fa-map-marker-alt' \}, '\u20303 \u23487 ': \{ bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-100', icon: 'fa-hotel' \}, '\u32654 \u39135 ': \{ bg: 'bg-red-50', text: 'text-red-500', border: 'border-red-100', icon: 'fa-utensils' \}, '\u36092 \u29289 ': \{ bg: 'bg-blue-50', text: 'text-blue-500', border: 'border-blue-100', icon: 'fa-shopping-bag' \}, '\u33322 \u29677 ': \{ bg: 'bg-gray-800', text: 'text-white', border: 'border-gray-700', icon: 'fa-plane' \}, '\u20132 \u36890 ': \{ bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-100', icon: 'fa-subway' \}, '\u20854 \u20182 ': \{ bg: 'bg-gray-100', text: 'text-gray-600', border: 'border-gray-200', icon: 'fa-tag' \} \};\
+        const expenseCategoryStyles = \{ '\uc0\u32654 \u39135 ': \{ bg: 'bg-orange-100', text: 'text-orange-500', icon: 'fa-utensils' \}, '\u36092 \u29289 ': \{ bg: 'bg-blue-100', text: 'text-blue-500', icon: 'fa-shopping-bag' \}, '\u20132 \u36890 ': \{ bg: 'bg-emerald-100', text: 'text-emerald-500', icon: 'fa-subway' \}, '\u20303 \u23487 ': \{ bg: 'bg-indigo-100', text: 'text-indigo-500', icon: 'fa-hotel' \}, '\u20854 \u20182 ': \{ bg: 'bg-gray-200', text: 'text-gray-600', icon: 'fa-receipt' \} \};\
+\
+        const checklistDefinition = [\
+            \{ icon: 'fa-bullhorn', color: 'text-brand-pink', title: '\uc0\u32147 \u32000 \u20844 \u21496 \u34892 \u21069 \u36890 \u30693 ', desc: '\u35531 \u21508 \u20301 \u22296 \u21729 \u26044 \u20986 \u30332 \u21069 \u65292 \u30906 \u23526 \u21246 \u36984 \u20197 \u19979 \u28165 \u21934 \u12290 \u35703 \u29031 \u33287 \u31805 \u35657 \u25991 \u20214 \u35531 \u21209 \u24517 \u21453 \u35206 \u30906 \u35469 \u65281 ', isNotice: true \},\
+            \{ icon: 'fa-passport', color: 'text-blue-500', title: '\uc0\u23448 \u26041 \u20986 \u30332 \u25991 \u20214 ', items: ['chk-doc-1|\u22635 \u23531  K-ETA \u25110  Arrival card'] \},\
+            \{ icon: 'fa-mobile-alt', color: 'text-brand-pink', title: '\uc0\u24517 \u20633  Apps', items: ['chk-app-1|Naver Map (\u38867 \u22283 \u31070 \u32026 \u23566 \u33322 )', 'chk-app-2|Papago (\u31934 \u28310 \u32763 \u35695 )'] \},\
+            \{ isDivider: true, text: '\uc0\u34892 \u26446 \u28165 \u21934 \u20998 \u39006 ' \},\
+            \{ icon: 'fa-id-card', color: 'text-amber-500', title: '\uc0\u37325 \u35201 \u35657 \u20214  / \u29289 \u21697 ', items: ['chk-lug-doc-1|\u35703 \u29031 ', 'chk-lug-doc-2|\u36523 \u20998 \u35657 ', 'chk-lug-doc-3|\u21488 \u24163  / \u38867 \u24163 ', 'chk-lug-doc-4|\u23526 \u39636 \u20449 \u29992 \u21345  (\u38656 \u38283 \u36890 \u28023 \u22806 \u21047 \u21345 )'] \},\
+            \{ icon: 'fa-tshirt', color: 'text-indigo-400', title: '\uc0\u26381 \u35037 ', items: ['chk-lug-clo-1|\u27915 \u34085 \u24335 \u20445 \u26262 \u34915 \u29289  (\u23460 \u20839 \u26262 \u27683 \u24375 )', 'chk-lug-clo-2|\u38450 \u39080 \u22806 \u22871  / \u22823 \u34915  / \u30332 \u29105 \u34915 ', 'chk-lug-clo-3|\u28961 \u25973 \u32784 \u36208 \u38795  (\u26085 \u36208 \u20841 \u33836 \u27493 \u24517 \u20633 )', 'chk-lug-clo-4|\u20839 \u34915 \u35122  / \u35178 \u23376  / \u30561 \u34915 ', 'chk-lug-clo-5|\u24125 \u23376  / \u22285 \u24062 ', 'chk-lug-clo-6|\u22826 \u38525 \u30524 \u37857 '] \},\
+            \{ icon: 'fa-plug', color: 'text-gray-500', title: '\uc0\u38651 \u23376 \u29986 \u21697 ', items: ['chk-lug-ele-1|\u36681 \u25509 \u38957  (\u38867 \u22283 \u28858 \u38617 \u22291 \u23380  220V)', 'chk-lug-ele-2|\u34892 \u21205 \u38651 \u28304  (\u19981 \u21487 \u36229 \u36942 2\u20491 \u65292 \u35201 Wh\u27161 \u31034 )', 'chk-lug-ele-3|\u20805 \u38651 \u32218 ', 'chk-lug-ele-4|\u32819 \u27231 '] \},\
+            \{ icon: 'fa-bath', color: 'text-teal-500', title: '\uc0\u29983 \u27963 \u29992 \u21697 ', items: ['chk-lug-lif-1|\u20491 \u20154 \u24120 \u20633 \u34277  (\u24863 \u20882 /\u33144 \u32963 /\u27490 \u30171 /\u36942 \u25935 )', 'chk-lug-lif-2|\u38754 \u32025  / \u28629 \u32025 \u24062 ', 'chk-lug-lif-3|\u36629 \u20415 \u38632 \u20632  / \u25240 \u30090 \u36092 \u29289 \u34955 ', 'chk-lug-lif-4|\u27792 \u28020  / \u27927 \u39662  / \u28516 \u39662 ', 'chk-lug-lif-5|\u29273 \u21047  / \u29273 \u33167  / \u29273 \u32218 ', 'chk-lug-lif-6|\u38577 \u30524 \u20445 \u39178 \u28082 '] \},\
+            \{ icon: 'fa-spa', color: 'text-pink-400', title: '\uc0\u21270 \u22941 \u21697  / \u20445 \u39178 \u21697 ', items: ['chk-lug-bea-1|\u20445 \u28629 \u20445 \u39178 \u21697 \u26053 \u34892 \u32068  (\u38867 \u22283 \u20559 \u20094 )', 'chk-lug-bea-2|\u35703 \u21767 \u33167  / \u35703 \u25163 \u38684  / \u36523 \u39636 \u20083 ', 'chk-lug-bea-3|\u38450 \u26348 \u20083  / \u20491 \u20154 \u24425 \u22941 \u21697 ', 'chk-lug-bea-4|\u21368 \u22941 \u29992 \u21697  / \u27927 \u38754 \u20083 ', 'chk-lug-bea-5|\u38754 \u33180 '] \},\
+            \{ icon: 'fa-star', color: 'text-yellow-400', title: '\uc0\u20854 \u20182 ', items: ['chk-lug-oth-1|\u38968 \u26517  (\u25645 \u27231 \u29992 )', 'chk-lug-oth-2|\u20445 \u20919 \u34955  (\u27231 \u22580 \u36229 \u21830 \u36023 \u20919 \u34255 \u29992 )', 'chk-lug-oth-3|\u31354 \u34892 \u26446 \u34955  (\u20633 \u29992 \u35037 \u25136 \u21033 \u21697 )', 'chk-lug-oth-4|\u34915 \u29289 \u22739 \u32302 \u34955 ', 'chk-lug-oth-5|\u22739 \u32302 \u27231 ', 'chk-lug-oth-6|\u34892 \u26446 \u31204 '] \}\
+        ];\
+\
+        const checkinDefinition = [\
+            \{ dayTitle: "Day 1 | 3/1 (\uc0\u26085 ) \u24344 \u22823 \u32233 \u34909 \u26085 ", sections: [ \{ title: "\u12304 \u39135 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-utensils", color: "text-orange-500", items: ["chk-d1-f1|\u27211 \u26449 \u28856 \u38622  (Kyochon) \u24344 \u22823 \u24215 \u65288 \u23477 \u22812 \u39318 \u36984 \u65289 "] \}, \{ title: "\u12304 \u36092 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-shopping-bag", color: "text-blue-500", items: ["chk-d1-s1|Olive Young \u24344 \u22823 \u26071 \u33382 \u24215 ", "chk-d1-s2|Daiso (\u22823 \u21109 ) \u24344 \u22823  2 \u34399 \u24215 "] \} ] \},\
+            \{ dayTitle: "\uc0\u55357 \u56517  Day 2 | 3/2 (\u19968 ) \u25563 \u21295  \'d7 \u29275 \u32907 \u25490  \'d7 \u21335 \u26481 \u22823 \u38272 \u22812 \u25136 ", sections: [ \{ title: "\u12304 \u39135 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-utensils", color: "text-orange-500", items: ["chk-d2-f1|\u26032 \u26449 \u36771 \u29129 \u29275 \u32907 \u25490  (\u49548 \u49888 \u51060 \u50136 )\u65288 \u21320 \u39184 \u65289 ", "chk-d2-f2|\u38515 \u29577 \u33775 \u19968 \u38587 \u38622 \u65288 \u26202 \u39184 \u65289 "] \}, \{ title: "\u12304 \u36092 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-shopping-bag", color: "text-blue-500", items: ["chk-d2-s1|\u21335 \u22823 \u38272 \u31461 \u35037 \u34903 ", "chk-d2-s2|TNF (The North Face) \u30333 \u27161 ", "chk-d2-s3|Musinsa Standard", "chk-d2-s4|Covernat", "chk-d2-s5|KODAK", "chk-d2-s6|MUSINSA Kicks", "chk-d2-s7|Nyunyu\u65288 \u26481 \u22823 \u38272 \u39166 \u21697 \u65289 ", "chk-d2-s8|Bucks & Leather\u65288 APM PLACE B207\u65289 "] \}, \{ title: "\u12304 \u34892 \u12305 \u37325 \u35201 \u30446 \u27161 ", icon: "fa-map-marker-alt", color: "text-green-500", items: ["chk-d2-a1|Sky / \u19968 \u21697 \u39321 \u25563 \u37666 \u25152 \u65288 10:00 \u28310 \u26178 \u25563 \u21295 \u65289 "] \} ] \},\
+            \{ dayTitle: "\uc0\u55357 \u56517  Day 3 | 3/3 (\u20108 ) \u32854 \u27700 \u27934 \u20840 \u26085 \u20027 \u25136 \u22580 ", sections: [ \{ title: "\u12304 \u39135 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-utensils", color: "text-orange-500", items: ["chk-d3-f1|\u32769 \u22902 \u22902 \u33756 \u35676  (Halmoni Recipe)\u65288 \u21320 \u39184 \u65289 ", "chk-d3-f2|Standard Bread\u65288 \u22806 \u24118 \u28966 \u31958 \u27861 \u24335 \u21520 \u21496 \u65289 ", "chk-d3-f3|\u40657 \u34382 \u29436  (Heukhorang)\u65288 \u26202 \u39184 \u65289 ", "chk-d3-f4|\u31062 \u20659 \u19977 \u20195 \u39340 \u37428 \u34223 \u25490 \u39592 \u28271 \u65288 \u23477 \u22812 \u65289 "] \}, \{ title: "\u12304 \u36092 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-shopping-bag", color: "text-blue-500", items: ["chk-d3-s1|ADER ERROR", "chk-d3-s2|Stand Oil", "chk-d3-s3|Fennec", "chk-d3-s4|Blue Elephant", "chk-d3-s5|Tamburins", "chk-d3-s6|Hetras", "chk-d3-s7|Matin Kim", "chk-d3-s8|emis", "chk-d3-s9|Kith", "chk-d3-s10|Granhand (\u32854 \u27700 \u24215 )", "chk-d3-s11|Beaker", "chk-d3-s12|LCDC Seoul", "chk-d3-s13|\u32854 \u27700 \u27934 \u26368 \u22823  OLIVE YOUNG"] \} ] \},\
+            \{ dayTitle: "\uc0\u55357 \u56517  Day 4 | 3/4 (\u19977 ) \u23433 \u22283 \u25955 \u31574  \'d7 \u28450 \u21335 \u27934 \u20027 \u25136 \u22580 ", sections: [ \{ title: "\u12304 \u39135 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-utensils", color: "text-orange-500", items: ["chk-d4-f1|Cafe Onion Anguk\u65288 \u26216 \u38291 \u21654 \u21857 \u65289 ", "chk-d4-f2|Artist Bakery\u65288 \u22806 \u24118 \u40573 \u21487 \u38924 \u65289 ", "chk-d4-f3|London Bagel Museum\u65288 \u24517 \u21507 \u35997 \u26524 \u65289 ", "chk-d4-f4|\u22303 \u20439 \u26449 \u34072 \u38622 \u28271 \u65288 \u21320 \u39184 \u65289 ", "chk-d4-f5|\u40680  (Ggupdang) \u26032 \u27801 \u24215 \u65288 \u26202 \u39184 \u28900 \u32905 \u65289 "] \}, \{ title: "\u12304 \u36092 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-shopping-bag", color: "text-blue-500", items: ["chk-d4-s1|Mardi Mercredi", "chk-d4-s2|MARITH\'c9", "chk-d4-s3|EMIS (\u28450 \u21335 \u26071 \u33382 \u24215 )", "chk-d4-s4|Granhand", "chk-d4-s5|Nonfiction", "chk-d4-s6|SW19", "chk-d4-s7|Rockfish Weatherwear"] \} ] \},\
+            \{ dayTitle: "\uc0\u55357 \u56517  Day 5 | 3/5 (\u22235 ) \u27743 \u21335 \u37291 \u32654  \'d7 \u29390 \u40407 \u20141 \u23798 \u23665 ", sections: [ \{ title: "\u12304 \u39135 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-utensils", color: "text-orange-500", items: ["chk-d5-f1|Milky Shop (\u29390 \u40407 \u20141 \u24215 )\u65288 \u29980 \u40670 \u22806 \u24118 \u65289 ", "chk-d5-f2|\u24291 \u34255 \u24066 \u22580 \u65288 \u29983 \u29275 \u32905 \u12289 \u32160 \u35910 \u39173 \u65289 ", "chk-d5-f3|\u28879 \u36948 \u37324 \u23478 \u37292 \u34809  (\u24344 \u22823 )\u65288 \u23477 \u22812 \u65289 "] \}, \{ title: "\u12304 \u36092 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-shopping-bag", color: "text-blue-500", items: ["chk-d5-s1|Human Made", "chk-d5-s2|Supreme", "chk-d5-s3|St\'fcssy", "chk-d5-s4|Gentle Monster / Haus Dosan", "chk-d5-s5|Verish", "chk-d5-s6|Alo", "chk-d5-s7|Wiggle Wiggle", "chk-d5-s8|Kream", "chk-d5-s9|Le Labo / Loe / Pesade / Sisao", "chk-d5-s10|Worksout"] \}, \{ title: "\u12304 \u34892 \u12305 \u37325 \u40670 \u34892 \u31243 ", icon: "fa-map-marker-alt", color: "text-green-500", items: ["chk-d5-a1|\u27743 \u21335 /\u26032 \u27801 \u37291 \u32654 \u34892 \u31243 "] \} ] \},\
+            \{ dayTitle: "\uc0\u55357 \u56517  Day 6 | 3/6 (\u20116 ) \u24310 \u21335 \u27934 \u20778 \u38597 \u25910 \u23614 ", sections: [ \{ title: "\u12304 \u39135 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-utensils", color: "text-orange-500", items: ["chk-d6-f1|\u28961 \u22434 \u23627  (\u47924 \u44396 \u50725 ) \u24310 \u21335 \u24215 \u65288 11:30 \u26089 \u21320 \u39184 \u65289 "] \}, \{ title: "\u12304 \u36092 \u12305 \u25171 \u21345 \u40670 ", icon: "fa-shopping-bag", color: "text-blue-500", items: ["chk-d6-s1|\u27138 \u22825 \u36229 \u24066  / E-mart\u65288 \u25505 \u36092 \u20276 \u25163 \u31150 \u12289 \u21654 \u21857 \u12289 \u33590 \u21253 \u12289 \u29138 \u37202 \u65289 "] \} ] \}\
+        ];\
+\
+        const defaultItineraryData = \{\
+            1: [\
+                \{ id: '1-1', time: '19:25', category: '\uc0\u33322 \u29677 ', title: '\u25269 \u36948 \u37329 \u28006 \u27231 \u22580  (IT662)', map: '', notes: '' \},\
+                \{ id: '1-2', time: '21:00', category: '\uc0\u20303 \u23487 ', title: '\u25269 \u36948 \u20303 \u23487  Marie\\'s house 101', map: '', notes: '\u25918 \u34892 \u26446 \u31245 \u20316 \u20241 \u24687 ' \},\
+                \{ id: '1-3', time: '21:30', category: '\uc0\u32654 \u39135 ', title: '\u27211 \u26449 \u28856 \u38622  (Kyochon)', map: 'https://map.naver.com/p/search/%EA%B5%90%EC%B4%8C%EC%B9%98%ED%82%A8%20%ED%99%8D%EB%8C%80%EC%A0%90', notes: '\u23477 \u22812 \u65306 \u24344 \u22823 \u20837 \u21475 \u31449  9 \u34399 \u20986 \u21475 ' \},\
+                \{ id: '1-4', time: '22:30', category: '\uc0\u36092 \u29289 ', title: '\u24344 \u22823 \u22812 \u38291 \u36092 \u29289 ', map: '', notes: 'Olive Young \u26071 \u33382 \u24215  (\u33267 23:00)\u12289 Daiso \u24344 \u22823 2\u34399 \u24215  (\u33267 22:30\u27880 \u24847 \u26178 \u38291 )\u12289 \u24344 \u22823 \u39166 \u21697 \u34903 (i am joy\u12289 \u26178 \u31354 \u38291 )' \}\
+            ],\
+            2: [\
+                \{ id: '2-1', time: '10:00', category: '\uc0\u20854 \u20182 ', title: '\u26126 \u27934 \u25563 \u37666 ', map: 'https://map.naver.com/p/search/%EB%AA%85%EB%8F%99%20%EC%8A%A4%EC%B9%B4%EC%9D%B4%ED%99%98%EC%A0%84%EC%86%8C', notes: 'Sky \u25563 \u37666 \u25152 \u12289 \u19968 \u21697 \u39321 \u25563 \u37666 \u25152 ' \},\
+                \{ id: '2-2', time: '12:00', category: '\uc0\u32654 \u39135 ', title: '\u26032 \u26449 \u36771 \u29129 \u29275 \u32907 \u25490 ', map: 'https://map.naver.com/p/search/%EC%86%8C%EC%8B%A0%EC%9D%B4%EC%8F%98', notes: '\u49548 \u49888 \u51060 \u50136  (\u26032 \u26449 \u31449 )' \},\
+                \{ id: '2-3', time: '14:00', category: '\uc0\u36092 \u29289 ', title: '\u21335 \u22823 \u38272 \u36092 \u29289 ', map: '', notes: '\u21335 \u22823 \u38272 \u31461 \u35037 \u34903  (Mamma\u12289 Pikachu\u12289 Apple \u31561 )' \},\
+                \{ id: '2-4', time: '16:00', category: '\uc0\u36092 \u29289 ', title: '\u26126 \u27934 /\u26481 \u22823 \u38272 \u20027 \u25136 \u22580 ', map: '', notes: 'TNF \u30333 \u27161 \u12289 Musinsa Standard\u12289 Covernat\u12289 KODAK\u12289 MUSINSA Kicks\u12289 Nyunyu(\u39166 \u21697 )\u12289 \u34277 \u23616 ' \},\
+                \{ id: '2-5', time: '20:00', category: '\uc0\u32654 \u39135 ', title: '\u38515 \u29577 \u33775 \u19968 \u38587 \u38622 ', map: 'https://map.naver.com/p/search/%EC%A7%84%EC%98%A5%ED%99%94%ED%95%A0%EB%A7%A4%EC%9B%90%EC%A1%B0%EB%8B%AD%ED%95%9C%EB%A7%88%EB%A6%AC', notes: '\u26481 \u22823 \u38272  9 \u34399 \u20986 \u21475 ' \},\
+                \{ id: '2-6', time: '22:00', category: '\uc0\u36092 \u29289 ', title: '\u26481 \u22823 \u38272 \u22812 \u25136 ', map: 'https://map.naver.com/p/search/apm%20place', notes: '\u26481 \u22823 \u38272  APM Place (\u21253 \u21547  Bucks & Leather B207 \u27331 \u20301 )' \}\
+            ],\
+            3: [\
+                \{ id: '3-1', time: '11:30', category: '\uc0\u32654 \u39135 ', title: '\u32769 \u22902 \u22902 \u33756 \u35676  (Halmoni Recipe)', map: 'https://map.naver.com/p/search/%ED%95%A0%EB%A4%BC%EB%8B%88%EC%9D%98%20%EB%A0%88%EC%8B%9C%ED%94%BC', notes: '\u21320 \u39184 ' \},\
+                \{ id: '3-2', time: '13:00', category: '\uc0\u36092 \u29289 ', title: '\u32854 \u27700 \u27934 \u20027 \u25136 \u22580 ', map: '', notes: 'ADER ERROR, Stand Oil, Fennec, Blue Elephant, Tamburins, Hetras, Matin Kim, emis, Kith, Granhand, Beaker, LCDC, \u32854 \u27700 \u26368 \u22823 OLIVE YOUNG' \},\
+                \{ id: '3-3', time: '15:30', category: '\uc0\u32654 \u39135 ', title: 'Standard Bread', map: 'https://map.naver.com/p/search/%EC%8A%A4%ED%83%A0%EB%8B%A4%EB%93%9C%20%EB%B8%8C%EB%A0%88%EB%93%9C', notes: '\u25554 \u26071 \u65306 \u22806 \u24118 \u28966 \u31958 \u27861 \u24335 \u21520 \u21496 ' \},\
+                \{ id: '3-4', time: '18:40', category: '\uc0\u32654 \u39135 ', title: '\u40657 \u34382 \u29436  (Heukhorang)', map: 'https://map.naver.com/p/search/%ED%9D%91%ED%98%B8%EB%9E%91%20%EC%84%B1%EC%88%98', notes: '\u26202 \u39184 ' \},\
+                \{ id: '3-5', time: '21:00', category: '\uc0\u32654 \u39135 ', title: '\u31062 \u20659 \u19977 \u20195 \u39340 \u37428 \u34223 \u25490 \u39592 \u28271 ', map: 'https://map.naver.com/p/search/%EC%86%8C%EB%AC%B8%EB%82%9C%EC%84%B1%EC%88%98%EA%B0%90%EC%9E%90%ED%83%95', notes: '\u23477 \u22812  (24\u23567 \u26178 \u29151 \u26989 )' \}\
+            ],\
+            4: [\
+                \{ id: '4-1', time: '08:00', category: '\uc0\u26223 \u40670 ', title: 'London Bagel Museum', map: 'https://map.naver.com/p/search/London%20Bagel%20Museum%20Anguk', notes: '\u20808 \u25277 \u34399 \u30908 \u29260  (\u23433 \u22283 \u24215 )' \},\
+                \{ id: '4-2', time: '08:15', category: '\uc0\u32654 \u39135 ', title: 'Artist Bakery', map: 'https://map.naver.com/p/search/%EC%95%84%ED%8B%B0%EC%8A%A4%ED%8A%B8%20%EB%B2%A0%EC%9D%B4%EC%BB%A4%EB%A6%AC', notes: '\u30452 \u25509 \u22806 \u24118 \u40573 \u21487 \u38924 ' \},\
+                \{ id: '4-3', time: '08:30', category: '\uc0\u32654 \u39135 ', title: 'Cafe Onion Anguk', map: 'https://map.naver.com/p/search/Cafe%20Onion%20Anguk', notes: '\u20839 \u29992 \u20139 \u21463 \u38867 \u23627 \u27675 \u22285 ' \},\
+                \{ id: '4-4', time: '10:30', category: '\uc0\u32654 \u39135 ', title: 'London Bagel Museum', map: 'https://map.naver.com/p/search/London%20Bagel%20Museum%20Anguk', notes: '\u38928 \u35336 \u20837 \u22580 \u29992 \u39184 ' \},\
+                \{ id: '4-5', time: '12:30', category: '\uc0\u32654 \u39135 ', title: '\u22303 \u20439 \u26449 \u34072 \u38622 \u28271 ', map: 'https://map.naver.com/p/search/%ED%86%A0%EC%86%8D%EC%B4%8C%20%EC%82%BC%EA%B3%84%ED%83%95', notes: '\u21320 \u39184  (\u27493 \u34892 \u32004  10-15 \u20998 \u37912 )' \},\
+                \{ id: '4-6', time: '14:30', category: '\uc0\u36092 \u29289 ', title: '\u28450 \u21335 \u27934 \u20027 \u25136 \u22580 ', map: '', notes: 'Mardi, MARITH\'c9, EMIS, Granhand, Nonfiction, SW19, Rockfish' \},\
+                \{ id: '4-7', time: '19:30', category: '\uc0\u32654 \u39135 ', title: '\u32771 \u40680  (Ggupdang) \u26032 \u27801 \u24215 ', map: 'https://map.naver.com/p/search/%EA%BF%89%EB%8B%B9%20%EC%8B%A0%EC%82%AC', notes: '\u26202 \u39184  (\u26032 \u27801 \u31449  5 \u34399 \u20986 \u21475 )' \}\
+            ],\
+            5: [\
+                \{ id: '5-1', time: '11:30', category: '\uc0\u20854 \u20182 ', title: '\u27743 \u21335 /\u26032 \u27801 \u37291 \u32654 ', map: 'https://map.naver.com/p/search/%EA%B0%95%EB%82%A8%EC%97%AD%20%ED%94%BC%EB%B6%80%EA%B3%BC', notes: '\u22320 \u37941  2 \u34399 \u32218 /3 \u34399 \u32218 ' \},\
+                \{ id: '5-2', time: '15:00', category: '\uc0\u36092 \u29289 ', title: '\u29390 \u40407 \u20141 /\u23798 \u23665 \u21830 \u22280 ', map: '', notes: 'Human Made, Supreme, St\'fcssy, Gentle Monster, Verish, Alo, Wiggle Wiggle, Kream, Le Labo, Loe, Pesade, Sisao, Worksout' \},\
+                \{ id: '5-3', time: '16:30', category: '\uc0\u32654 \u39135 ', title: 'Milky Shop (\u29390 \u40407 \u20141 \u24215 )', map: 'https://map.naver.com/p/search/%EB%B0%80%ED%82%A4%EC%83%B5%20%EC%95%95%EA%B5%AC%EC%A0%95', notes: '\u25554 \u26071 \u26178 \u38291 ' \},\
+                \{ id: '5-4', time: '18:00', category: '\uc0\u32654 \u39135 ', title: '\u24291 \u34255 \u24066 \u22580 ', map: 'https://map.naver.com/p/search/%EA%B4%91%EC%9E%A5%EC%8B%9C%EC%9E%A5', notes: '\u26202 \u39184  (\u29983 \u29275 \u32905 \u12289 \u32160 \u35910 \u39173 )' \},\
+                \{ id: '5-5', time: '20:30', category: '\uc0\u32654 \u39135 ', title: '\u28879 \u36948 \u37324 \u23478 \u37292 \u34809  (\u24344 \u22823 )', map: 'https://map.naver.com/p/search/%EC%98%A4%EB%8B%A4%EB%A6%AC%EC%A7%91%20%ED%99%8D%EB%8C%80', notes: '\u26202 \u39184 /\u23477 \u22812 ' \}\
+            ],\
+            6: [\
+                \{ id: '6-1', time: '09:30', category: '\uc0\u36092 \u29289 ', title: '\u27138 \u22825 \u36229 \u24066  \u25110  E-mart', map: '', notes: '\u35036 \u36008 \u26178 \u38291 ' \},\
+                \{ id: '6-2', time: '11:30', category: '\uc0\u32654 \u39135 ', title: '\u28961 \u22434 \u23627  (\u47924 \u44396 \u50725 ) \u24310 \u21335 \u24215 ', map: 'https://map.naver.com/p/search/%EB%AC%B4%EA%B5%AC%EC%98%A5', notes: '\u26089 \u21320 \u39184  (11:30 \u38283 \u38272 )' \},\
+                \{ id: '6-3', time: '12:00', category: '\uc0\u33322 \u29677 ', title: '\u20161 \u24029 \u23567 \u20998 \u38538 \u25645 \u27231 ', map: '', notes: '\u25645 \u20056 \u33775 \u33322  CI165' \},\
+                \{ id: '6-4', time: '13:30', category: '\uc0\u36092 \u29289 ', title: '\u24344 \u22823 \u26368 \u24460 \u35036 \u36008 ', map: '', notes: '\u36092 \u36023 \u38646 \u39135 \u12289 \u27873 \u40629 \u12289 \u21654 \u21857 \u12289 \u33590 \u21253 \u12289 \u29138 \u37202 ' \},\
+                \{ id: '6-5', time: '20:35', category: '\uc0\u33322 \u29677 ', title: '\u37329 \u28006 \u23567 \u20998 \u38538 \u25645 \u27231 ', map: '', notes: '\u25645 \u20056 \u34382 \u33322  IT663' \}\
+            ]\
+        \};\
+\
+        const DATA_VERSION = 'v_app_native_v2_final'; \
+        if (localStorage.getItem('appDataVersion') !== DATA_VERSION) \{\
+            localStorage.setItem('seoulAppItinerary', JSON.stringify(defaultItineraryData));\
+            localStorage.setItem('appDataVersion', DATA_VERSION);\
+        \}\
+\
+        let itineraryData = JSON.parse(localStorage.getItem('seoulAppItinerary')) || defaultItineraryData;\
+        let expensesData = JSON.parse(localStorage.getItem('seoulAppExpenses')) || [];\
+        let checklistState = JSON.parse(localStorage.getItem('seoulAppChecklist')) || \{\};\
+        let checkinState = JSON.parse(localStorage.getItem('seoulAppCheckin')) || \{\};\
+\
+        // \uc0\u24375 \u21046 \u23531 \u20837 \u20445 \u35703 \u27231 \u21046 \u65306 \u36991 \u20813  iOS \u21047 \u25481  App \u26178 \u36986 \u22833 \u26283 \u23384 \
+        window.addEventListener('visibilitychange', () => \{\
+            if (document.visibilityState === 'hidden') \{\
+                localStorage.setItem('seoulAppChecklist', JSON.stringify(checklistState));\
+                localStorage.setItem('seoulAppCheckin', JSON.stringify(checkinState));\
+                localStorage.setItem('seoulAppItinerary', JSON.stringify(itineraryData));\
+                localStorage.setItem('seoulAppExpenses', JSON.stringify(expensesData));\
+            \}\
+        \});\
+\
+        // --- 2. \uc0\u35222 \u22294 \u33287 \u38913 \u31844 \u20999 \u25563  ---\
+        function switchTab(tabId) \{\
+            document.querySelectorAll('.page-view').forEach(view => view.classList.remove('active'));\
+            document.getElementById('view-' + tabId).classList.add('active');\
+            \
+            document.querySelectorAll('.nav-btn').forEach(btn => \{\
+                btn.classList.remove('text-brand-pink', 'font-bold');\
+                btn.classList.add('text-gray-400', 'font-medium');\
+            \});\
+            \
+            const activeBtn = document.getElementById('tab-' + tabId);\
+            activeBtn.classList.remove('text-gray-400', 'font-medium');\
+            activeBtn.classList.add('text-brand-pink', 'font-bold');\
+            \
+            document.getElementById('main-scroll-container').scrollTo(\{ top: 0, behavior: 'smooth' \});\
+\
+            if(tabId === 'itinerary') \{ renderDayTabs(); renderItinerary(); \}\
+            if(tabId === 'accounting') \{ renderExpenses(); \}\
+            if(tabId === 'checklist') \{ renderChecklist(); \}\
+            if(tabId === 'checkin') \{ renderCheckin(); \}\
+        \}\
+\
+        function renderDayTabs() \{\
+            const container = document.getElementById('day-tabs-container');\
+            container.innerHTML = '';\
+            for (let i = 1; i <= totalDays; i++) \{\
+                const isActive = i === currentDay;\
+                const btn = document.createElement('button');\
+                btn.className = `px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap transition-all flex-shrink-0 active:scale-95 $\{isActive ? 'bg-brand-pink text-white shadow-md' : 'bg-white text-gray-500 border border-gray-100 shadow-sm'\}`;\
+                btn.innerHTML = `Day $\{i\} <span class="font-normal opacity-90 ml-0.5">$\{weatherData[i].date\}</span>`;\
+                btn.onclick = () => \{ currentDay = i; renderDayTabs(); renderItinerary(); btn.scrollIntoView(\{behavior: 'smooth', inline: 'center', block: 'nearest'\}); \};\
+                container.appendChild(btn);\
+            \}\
+            updateWeatherWidget();\
+        \}\
+\
+        function updateWeatherWidget() \{\
+            const w = weatherData[currentDay];\
+            document.getElementById('weather-icon').textContent = w.icon;\
+            document.getElementById('weather-temp').textContent = w.temp;\
+            document.getElementById('weather-feel').textContent = w.feel;\
+        \}\
+\
+        function renderItinerary() \{\
+            const list = document.getElementById('itinerary-list');\
+            const dayData = itineraryData[currentDay] || [];\
+            dayData.sort((a, b) => a.time.localeCompare(b.time));\
+\
+            if (dayData.length === 0) \{\
+                list.innerHTML = `<div class="text-center py-10 text-gray-400 text-sm"><i class="fas fa-box-open text-4xl mb-3 opacity-30 block"></i>\uc0\u30070 \u26085 \u23578 \u26410 \u23433 \u25490 \u34892 \u31243 </div>`;\
+                return;\
+            \}\
+\
+            let html = '';\
+            dayData.forEach((item, index) => \{\
+                const style = categoryStyles[item.category] || categoryStyles['\uc0\u20854 \u20182 '];\
+                const hasNotes = item.notes && item.notes.trim() !== '';\
+                const hasMap = item.map && item.map.trim() !== '';\
+\
+                html += `\
+                <div class="time-slot relative timeline-line flex gap-3 mb-5" draggable="true" ondragstart="dragStart(event, $\{index\})" ondragover="dragOver(event)" ondrop="drop(event, $\{index\})" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">\
+                    <div class="w-12 text-right shrink-0 relative z-10 pt-2.5"><div class="font-en font-bold text-brand-dark text-[14px] bg-[#fcfcfc] py-0.5 shadow-sm rounded">$\{item.time\}</div></div>\
+                    <div class="relative z-10 flex-1 bg-white p-4 rounded-2xl shadow-sm border border-gray-100 cursor-move active:bg-gray-50 transition-colors group" onclick="openItineraryModal('$\{item.id\}')">\
+                        <div class="flex justify-between items-start mb-2">\
+                            <span class="inline-block $\{style.bg\} $\{style.text\} text-[10px] px-2 py-0.5 rounded font-bold border $\{style.border\} tracking-widest"><i class="fas $\{style.icon\} mr-1"></i>$\{item.category\}</span>\
+                            <i class="fas fa-bars text-gray-200 text-xs mt-1"></i>\
+                        </div>\
+                        <div class="text-gray-800 font-bold text-[16px] leading-snug w-[85%]">$\{item.title\}</div>\
+                        $\{hasNotes ? `<div class="mt-3 pt-3 border-t border-gray-50"><div class="text-xs text-gray-500 font-medium leading-relaxed">$\{item.notes\}</div></div>` : ''\}\
+                        $\{hasMap ? `<button onclick="openLink(event, '$\{item.map\}')" class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center border border-green-100 shadow-sm active:bg-green-200 transition-colors"><i class="fas fa-map-marked-alt text-[15px]"></i></button>` : ''\}\
+                    </div>\
+                </div>`;\
+            \});\
+            list.innerHTML = `<div class="pt-2">$\{html\}</div>`;\
+        \}\
+\
+        let draggedIndex = null;\
+        function dragStart(e, index) \{ draggedIndex = index; e.dataTransfer.effectAllowed = 'move'; setTimeout(() => e.target.classList.add('dragging'), 0); \}\
+        function dragOver(e) \{ e.preventDefault(); e.dataTransfer.dropEffect = 'move'; \}\
+        function dragEnter(e) \{ e.preventDefault(); const slot = e.target.closest('.time-slot'); if(slot) slot.classList.add('drag-over'); \}\
+        function dragLeave(e) \{ const slot = e.target.closest('.time-slot'); if(slot) slot.classList.remove('drag-over'); \}\
+        function drop(e, targetIndex) \{\
+            e.preventDefault();\
+            document.querySelectorAll('.time-slot').forEach(el => \{ el.classList.remove('dragging', 'drag-over'); \});\
+            if (draggedIndex === null || draggedIndex === targetIndex) return;\
+            const dayData = itineraryData[currentDay];\
+            const item = dayData.splice(draggedIndex, 1)[0];\
+            dayData.splice(targetIndex, 0, item);\
+            localStorage.setItem('seoulAppItinerary', JSON.stringify(itineraryData));\
+            renderItinerary();\
+        \}\
+\
+        function openItineraryModal(itemId = null) \{\
+            const form = document.getElementById('itinerary-form'); form.reset();\
+            if (itemId) \{\
+                document.getElementById('modal-title').innerHTML = '<i class="fas fa-edit text-brand-pink"></i> \uc0\u32232 \u36655 \u34892 \u31243 ';\
+                document.getElementById('btn-delete').classList.remove('hidden');\
+                const item = itineraryData[currentDay].find(i => i.id === itemId);\
+                if(item) \{\
+                    document.getElementById('item-id').value = item.id;\
+                    document.getElementById('item-time').value = item.time;\
+                    document.getElementById('item-category').value = item.category;\
+                    document.getElementById('item-title').value = item.title;\
+                    document.getElementById('item-map').value = item.map || '';\
+                    document.getElementById('item-notes').value = item.notes || '';\
+                \}\
+            \} else \{\
+                document.getElementById('modal-title').innerHTML = '<i class="fas fa-plus-circle text-brand-pink"></i> \uc0\u26032 \u22686 \u34892 \u31243 ';\
+                document.getElementById('btn-delete').classList.add('hidden');\
+                document.getElementById('item-id').value = '';\
+                document.getElementById('item-time').value = '12:00';\
+            \}\
+            document.getElementById('itinerary-modal').classList.remove('hidden');\
+        \}\
+\
+        function closeItineraryModal() \{ document.getElementById('itinerary-modal').classList.add('hidden'); \}\
+\
+        function saveItinerary(e) \{\
+            e.preventDefault();\
+            const id = document.getElementById('item-id').value;\
+            const newItem = \{\
+                id: id || Date.now().toString(),\
+                time: document.getElementById('item-time').value,\
+                category: document.getElementById('item-category').value,\
+                title: document.getElementById('item-title').value,\
+                map: document.getElementById('item-map').value,\
+                notes: document.getElementById('item-notes').value\
+            \};\
+            if (id) \{\
+                const index = itineraryData[currentDay].findIndex(i => i.id === id);\
+                if(index !== -1) itineraryData[currentDay][index] = newItem;\
+            \} else \{\
+                if(!itineraryData[currentDay]) itineraryData[currentDay] = [];\
+                itineraryData[currentDay].push(newItem);\
+            \}\
+            localStorage.setItem('seoulAppItinerary', JSON.stringify(itineraryData));\
+            renderItinerary(); closeItineraryModal();\
+        \}\
+\
+        function deleteItineraryItem() \{\
+            const id = document.getElementById('item-id').value;\
+            if(!id) return;\
+            if(confirm('\uc0\u30906 \u23450 \u35201 \u21034 \u38500 \u36889 \u20491 \u34892 \u31243 \u21966 \u65311 ')) \{\
+                itineraryData[currentDay] = itineraryData[currentDay].filter(i => i.id !== id);\
+                localStorage.setItem('seoulAppItinerary', JSON.stringify(itineraryData));\
+                renderItinerary(); closeItineraryModal();\
+            \}\
+        \}\
+\
+        function getFormattedDate(date) \{\
+            const d = new Date(date);\
+            let month = '' + (d.getMonth() + 1); let day = '' + d.getDate(); const year = d.getFullYear();\
+            if (month.length < 2) month = '0' + month; if (day.length < 2) day = '0' + day;\
+            return [year, month, day].join('-');\
+        \}\
+        \
+        function getDisplayDate(dateString) \{\
+            if(!dateString) return '';\
+            const parts = dateString.split('-');\
+            if(parts.length === 3) return `$\{parseInt(parts[1])\}/$\{parseInt(parts[2])\}`;\
+            return dateString;\
+        \}\
+\
+        function renderExpenses() \{\
+            const list = document.getElementById('expense-list');\
+            let totalKRW = 0; let html = '';\
+            const sortedExpenses = [...expensesData].sort((a, b) => \{\
+                const dateA = new Date(a.date || a.timestamp).getTime();\
+                const dateB = new Date(b.date || b.timestamp).getTime();\
+                if (dateA !== dateB) return dateB - dateA;\
+                return b.timestamp - a.timestamp;\
+            \});\
+            if (sortedExpenses.length === 0) \{\
+                list.innerHTML = `<div class="text-center py-10 text-gray-400 text-sm"><i class="fas fa-receipt text-4xl mb-3 opacity-30 block"></i>\uc0\u23578 \u26410 \u35352 \u37636 \u20219 \u20309 \u33457 \u36027 </div>`;\
+            \} else \{\
+                sortedExpenses.forEach(exp => \{\
+                    totalKRW += Number(exp.amount);\
+                    const style = expenseCategoryStyles[exp.category] || expenseCategoryStyles['\uc0\u20854 \u20182 '];\
+                    const displayDate = exp.date ? getDisplayDate(exp.date) : '';\
+                    html += `\
+                    <div class="bg-white p-4 rounded-2xl border border-gray-100 shadow-sm flex justify-between items-center cursor-pointer active:bg-gray-50 transition-colors" onclick="openExpenseModal('$\{exp.id\}')">\
+                        <div class="flex items-center gap-3">\
+                            <div class="w-12 h-12 rounded-full $\{style.bg\} $\{style.text\} flex items-center justify-center text-lg shadow-inner shrink-0"><i class="fas $\{style.icon\}"></i></div>\
+                            <div class="overflow-hidden">\
+                                <div class="text-[16px] font-bold text-gray-800 truncate mb-1">$\{exp.name\}</div>\
+                                <div class="text-xs text-gray-400 flex items-center gap-1.5"><span class="bg-gray-100 px-2 py-0.5 rounded">$\{exp.category\}</span>$\{displayDate ? `<span class="text-gray-400"><i class="far fa-calendar-alt mr-1"></i>$\{displayDate\}</span>` : ''\}</div>\
+                            </div>\
+                        </div>\
+                        <div class="font-black text-gray-800 font-en text-xl tracking-tight shrink-0 ml-2">\uc0\u8361  $\{Number(exp.amount).toLocaleString()\}</div>\
+                    </div>`;\
+                \});\
+                list.innerHTML = html;\
+            \}\
+            document.getElementById('total-spent-krw').innerText = `\uc0\u8361  $\{totalKRW.toLocaleString()\}`;\
+            document.getElementById('total-spent-twd').innerText = Math.round(totalKRW * exchangeRate).toLocaleString();\
+        \}\
+\
+        function openExpenseModal(id = null) \{\
+            const form = document.getElementById('expense-form'); form.reset();\
+            document.getElementById('exp-date').value = getFormattedDate(new Date());\
+            if (id) \{\
+                document.getElementById('expense-modal-title').innerHTML = '<i class="fas fa-edit text-emerald-500"></i> \uc0\u32232 \u36655 \u28040 \u36027 ';\
+                document.getElementById('exp-delete-btn').classList.remove('hidden');\
+                const exp = expensesData.find(e => e.id === id);\
+                if (exp) \{\
+                    document.getElementById('exp-id').value = exp.id;\
+                    document.getElementById('exp-amount').value = exp.amount;\
+                    document.getElementById('exp-name').value = exp.name;\
+                    document.getElementById('exp-category').value = exp.category;\
+                    document.getElementById('exp-date').value = exp.date || getFormattedDate(new Date());\
+                \}\
+            \} else \{\
+                document.getElementById('expense-modal-title').innerHTML = '<i class="fas fa-receipt text-emerald-500"></i> \uc0\u26032 \u22686 \u28040 \u36027 ';\
+                document.getElementById('exp-delete-btn').classList.add('hidden');\
+                document.getElementById('exp-id').value = '';\
+            \}\
+            document.getElementById('expense-modal').classList.remove('hidden');\
+        \}\
+\
+        function closeExpenseModal() \{ document.getElementById('expense-modal').classList.add('hidden'); \}\
+\
+        function saveExpense(e) \{\
+            e.preventDefault();\
+            const id = document.getElementById('exp-id').value;\
+            const newExp = \{ id: id || Date.now().toString(), amount: document.getElementById('exp-amount').value, name: document.getElementById('exp-name').value, category: document.getElementById('exp-category').value, date: document.getElementById('exp-date').value, timestamp: id ? expensesData.find(e => e.id === id).timestamp : Date.now() \};\
+            if (id) \{ const index = expensesData.findIndex(e => e.id === id); if(index !== -1) expensesData[index] = newExp; \} \
+            else \{ expensesData.push(newExp); \}\
+            localStorage.setItem('seoulAppExpenses', JSON.stringify(expensesData));\
+            renderExpenses(); closeExpenseModal();\
+        \}\
+\
+        function deleteExpense() \{\
+            const id = document.getElementById('exp-id').value;\
+            if(!id) return;\
+            if(confirm('\uc0\u30906 \u23450 \u35201 \u21034 \u38500 \u36889 \u31558 \u32000 \u37636 \u21966 \u65311 ')) \{\
+                expensesData = expensesData.filter(e => e.id !== id);\
+                localStorage.setItem('seoulAppExpenses', JSON.stringify(expensesData));\
+                renderExpenses(); closeExpenseModal();\
+            \}\
+        \}\
+\
+        function calculateExchange() \{\
+            const krw = parseFloat(document.getElementById('krw-input').value);\
+            const out = document.getElementById('twd-output');\
+            const badge = document.getElementById('tax-free-badge');\
+            if (isNaN(krw) || krw <= 0) \{ out.textContent = '0'; badge.className = 'text-[10px] px-2 py-1 rounded bg-gray-100 text-gray-400 font-bold'; badge.textContent = '\uc0\u26410 \u36948 \u36864 \u31237 \u38272 \u27323 '; return; \}\
+            out.textContent = Math.round(krw * exchangeRate).toLocaleString();\
+            if (krw >= 15000) \{ badge.className = 'text-[10px] px-2 py-1 rounded bg-red-50 text-red-500 font-bold border border-red-100 animate-pulse'; badge.textContent = '\uc0\u10024  \u36948 \u36864 \u31237 \u38272 \u27323 \u65281 '; \} \
+            else \{ badge.className = 'text-[10px] px-2 py-1 rounded bg-gray-100 text-gray-400 font-bold'; badge.textContent = `\uc0\u24046  \u8361 $\{(15000 - krw).toLocaleString()\} \u36864 \u31237 `; \}\
+        \}\
+\
+        function renderChecklist() \{\
+            const container = document.getElementById('checklist-container');\
+            let html = '';\
+            checklistDefinition.forEach(block => \{\
+                if(block.isNotice) \{\
+                    html += `<div class="bg-[#2a2a2a] border border-gray-800 rounded-2xl p-4 shadow-lg relative overflow-hidden"><div class="absolute right-[-10px] top-[-10px] text-6xl text-brand-pink/20 transform rotate-12"><i class="fas $\{block.icon\}"></i></div><h3 class="text-brand-pink font-bold mb-2 flex items-center gap-2 relative z-10 text-[13px] tracking-wider"><i class="fas fa-exclamation-circle animate-pulse"></i> $\{block.title\}</h3><p class="text-gray-300 text-xs leading-relaxed relative z-10">$\{block.desc\}</p></div>`;\
+                \} else if(block.isDivider) \{\
+                    html += `<div class="flex items-center gap-2 my-6 px-1"><div class="h-px bg-gray-200 flex-1"></div><h3 class="text-sm font-black text-gray-400 tracking-widest"><i class="fas fa-suitcase-rolling mr-1"></i> $\{block.text\}</h3><div class="h-px bg-gray-200 flex-1"></div></div>`;\
+                \} else \{\
+                    let itemsHtml = block.items.map(item => \{\
+                        const [id, label] = item.split('|');\
+                        const isChecked = checklistState[id] ? 'checked' : '';\
+                        return `<label class="checklist-item flex items-start gap-3 cursor-pointer group py-1"><input type="checkbox" id="$\{id\}" $\{isChecked\} class="mt-1 w-5 h-5 rounded-md border-gray-300 text-brand-pink focus:ring-brand-pink transition-all" onchange="saveChecklist(this)"><div class="flex-1"><span class="task-text text-[14px] text-gray-700 font-medium transition-colors">$\{label\}</span></div></label>`;\
+                    \}).join('');\
+                    html += `<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-4"><h4 class="font-bold text-gray-800 mb-3 text-sm flex items-center gap-2 border-b border-gray-50 pb-2"><i class="fas $\{block.icon\} $\{block.color\}"></i> $\{block.title\}</h4><div class="space-y-2">$\{itemsHtml\}</div></div>`;\
+                \}\
+            \});\
+            container.innerHTML = html;\
+        \}\
+\
+        function saveChecklist(checkbox) \{\
+            if(checkbox) \{ checklistState[checkbox.id] = checkbox.checked; localStorage.setItem('seoulAppChecklist', JSON.stringify(checklistState)); \}\
+        \}\
+\
+        function renderCheckin() \{\
+            const container = document.getElementById('checkin-container');\
+            let html = `<div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-4 shadow-lg relative overflow-hidden mb-6 text-white"><div class="absolute right-[-10px] top-[-10px] text-6xl text-white/10 transform rotate-12"><i class="fas fa-map-pin"></i></div><h3 class="font-bold mb-2 flex items-center gap-2 relative z-10 text-[14px] tracking-wider"><i class="fas fa-flag-checkered animate-pulse text-yellow-300"></i> \uc0\u24033 \u28436 \u24517 \u20633 \u25171 \u21345 \u28165 \u21934 </h3><p class="text-white/90 text-xs leading-relaxed relative z-10">\u21507 \u22909 \u36023 \u28415 \u19981 \u30041 \u36986 \u25022 \u65281 \u27599 \u25915 \u19979 \u19968 \u20491 \u22320 \u27161 \u65292 \u23601 \u38712 \u27683 \u22320 \u21246 \u19979 \u21435 \u21543 \u65281 </p></div>`;\
+\
+            checkinDefinition.forEach(day => \{\
+                html += `<div class="mb-8"><div class="flex items-center gap-2 mb-3 px-1"><div class="w-1.5 h-4 bg-brand-pink rounded-full"></div><h3 class="text-sm font-black text-gray-700 tracking-wider">$\{day.dayTitle\}</h3></div>`;\
+                day.sections.forEach(sec => \{\
+                    let itemsHtml = sec.items.map(item => \{\
+                        const [id, label] = item.split('|');\
+                        const isChecked = checkinState[id] ? 'checked' : '';\
+                        return `<label class="checklist-item flex items-start gap-3 cursor-pointer group py-1"><input type="checkbox" id="$\{id\}" $\{isChecked\} class="mt-1 w-5 h-5 rounded-md border-gray-300 text-brand-pink focus:ring-brand-pink transition-all" onchange="saveCheckin(this)"><div class="flex-1"><span class="task-text text-[14px] text-gray-700 font-bold transition-colors">$\{label\}</span></div></label>`;\
+                    \}).join('');\
+                    html += `<div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-4 mb-3"><h4 class="font-bold text-gray-800 mb-3 text-xs flex items-center gap-2 border-b border-gray-50 pb-2"><i class="fas $\{sec.icon\} $\{sec.color\}"></i> $\{sec.title\}</h4><div class="space-y-2">$\{itemsHtml\}</div></div>`;\
+                \});\
+                html += `</div>`;\
+            \});\
+            container.innerHTML = html;\
+        \}\
+\
+        function saveCheckin(checkbox) \{\
+            if(checkbox) \{ checkinState[checkbox.id] = checkbox.checked; localStorage.setItem('seoulAppCheckin', JSON.stringify(checkinState)); \}\
+        \}\
+\
+        window.onload = () => \{ renderDayTabs(); renderExpenses(); renderChecklist(); renderCheckin(); \}\
+    </script>\
+</body>\
+</html>}
